@@ -1,0 +1,1 @@
+0 2 * * * /bin/bash /chemin/vers/nextcloud_backup.sh
