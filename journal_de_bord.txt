@@ -1,0 +1,107 @@
+    1  sudo uwf status
+    2  sudo uwfw status
+    3  sudo ufw status
+    4  ls /var/www
+    5  ls /var/
+    6  sudo nano /etc/apache2/sites-available/kalvin.conf
+    7  sudo apt update && sudo apt upgrade -y
+    8  sudo apt install apache2 mariadb-server libapache2-mod-php php php-mysql php-zip php-dom php-curl php-mbstring php-xml php-gd php-bcmath php-imagick php-intl php-cli php-common php-opcache unzip ufw -y
+    9  sudo mkfs.ext4 /dev/sdb
+   10  sudo mkfs.ext4 /dev/sdc
+   11  sudo mkdir -p /var/www/nextcloud/data
+   12  sudo mkdir -p /var/www/nextcloud/config
+   13  sudo mount /dev/sdb /var/www/nextcloud/data
+   14  sudo mount /dev/sdc /var/www/nextcloud/config
+   15  sudo nano /etc/fstab
+   16  sudo ufw allow 22
+   17  sudo ufw allow 80
+   18  sudo ufw allow 443
+   19  sudo ufw allow 8080
+   20  sudo ufw enable
+   21  sudo nano /etc/apache2/sites-available/nextcloud.conf
+   22  sudo a2ensite nextcloud.conf
+   23  sudo a2enmod rewrite headers env dir mime
+   24  sudo systemctl reload apache2
+   25  cd /tmp
+   26  wget https://download.nextcloud.com/server/releases/latest.zip
+   27  unzip latest.zip
+   28  sudo mv nextcloud /var/www/
+   29  sudo rm -rf /var/www/nextcloud/*
+   30  sudo mv nextcloud/* /var/www/nextcloud/
+   31  sudo umount /var/www/nextcloud/data
+   32  sudo rm -rf /var/www/nextcloud
+   33  sudo mv nextcloud /var/www/
+   34  sudo mount /dev/sdb /var/www/nextcloud/data
+   35  ls /var/
+   36  ls /var/www/
+   37  ls /var/www/nextcloud/
+   38  ls /var/www/nextcloud/config/
+   39  rmdir /var/www/nextcloud/config/
+   40  sudormdir /var/www/nextcloud/config/
+   41  sudo rmdir /var/www/nextcloud/config/
+   42  ubuntu@vm-baitan:/tmp$ ls /var/
+   43  backups  cache  crash  lib  local  lock  log  mail  opt  run  snap  spool  tmp  www
+   44  ubuntu@vm-baitan:/tmp$ ls /var/www/
+   45  html  nextcloud
+   46  ubuntu@vm-baitan:/tmp$ ls /var/www/nextcloud/
+   47  config
+   48  ubuntu@vm-baitan:/tmp$ ls /var/www/nextcloud/config/
+   49  ubuntu@vm-baitan:/tmp$ rmdir /var/www/nextcloud/config/
+   50  rmdir: failed to remove '/var/www/nextcloud/config/': Permission denied
+   51  ubuntu@vm-baitan:/tmp$ sudormdir /var/www/nextcloud/config/
+   52  sudormdir: command not found
+   53  ubuntu@vm-baitan:/tmp$ sudo rmdir /var/www/nextcloud/config/
+   54  rmdir: failed to remove '/var/www/nextcloud/config/': Device or resource busy
+   55  ubuntu@vm-baitan:/tmp$ 
+   56  sudo umount /var/www/nextcloud/config
+   57  sudo rmdir /var/www/nextcloud/config
+   58  sudo rm -rf /var/www/nextcloud
+   59  sudo mv nextcloud /var/www/
+   60  sudo chown -R www-data:www-data /var/www/nextcloud
+   61  sudo mysql_secure_installation
+   62  sudo ufw status
+   63  sudo systemctl status apache2
+   64  sudo chown -R www-data:www-data /var/www/nextcloud
+   65  sudo find /var/www/nextcloud -type d -exec chmod 755 {} \;
+   66  sudo find /var/www/nextcloud -type f -exec chmod 644 {} \;
+   67  cat /etc/apache2/sites-available/nextcloud.conf
+   68  nano /etc/apache2/sites-available/nextcloud.conf
+   69  sudo a2enmod rewrite headers env dir mime
+   70  sudo systemctl restart apache2
+   71  sudo tail -n 30 /var/log/apache2/error.log
+   72  cd /var/www/nextcloud/
+   73  ls
+   74  touch test.txt
+   75  sudo touch test.txt
+   76  echo "test ok" | sudo tee /var/www/nextcloud/test.txt
+   77  cd /tmp
+   78  wget https://download.nextcloud.com/server/releases/latest.zip
+   79  unzip latest.zip
+   80  sudo rm -rf /var/www/nextcloud
+   81  sudo mv nextcloud /var/www/
+   82  ls /var/www/nextcloud/
+   83  sudo chown -R www-data:www-data /var/www/nextcloud
+   84  sudo find /var/www/nextcloud -type d -exec chmod 755 {} \;
+   85  sudo find /var/www/nextcloud -type f -exec chmod 644 {} \;
+   86  sudo systemctl restart apache2
+   87  sudo mysql -u root -p
+   88  mysql -u nextclouduser -p
+   89  mysql -u roott -p
+   90  sudo apt install certbot python3-certbot-apache -y
+   91  sudo certbot --apache -d kalvin.btn.cfpt.info
+   92  sudo certbot renew --dry-run
+   93  sudo systemctl restart apache2
+   94  lsblk
+   95  history 
+   96  nano /usr/local/bin/nextcloud_backup.sh
+   97  sudo nano /usr/local/bin/nextcloud_backup.sh
+   98  sudo chmod +x /usr/local/bin/nextcloud_backup.sh
+   99  sudo crontab -e
+  100  cd /
+  101  history > journal_de_bord.txt
+  102  sudo history > journal_de_bord.txt
+  103  cd /home/
+  104  ls
+  105  cd /usr/
+  106  cd /home/ubuntu/
+  107  history > journal_de_bord.txt
